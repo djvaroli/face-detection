@@ -37,7 +37,7 @@ def detect_faces(
     detected_faces = FACE_CLASSIFIER.detectMultiScale(working_image, 1.3, 5)
 
     if len(detected_faces) == 0:
-        return
+        return None, None, img
 
     just_faces = []
     for i, (x, y, w, h) in enumerate(detected_faces):
